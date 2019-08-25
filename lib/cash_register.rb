@@ -5,6 +5,7 @@ class CashRegister
   def initialize(discount=nil) 
     @total = 0 
     @discount = discount
+    @items = [] #when we make a new CashRegister, we initialize it with a new empty items array
   end
   
   def add_item(title, price, quantity=1)
