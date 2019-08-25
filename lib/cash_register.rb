@@ -16,7 +16,7 @@ class CashRegister
       @total = (@total - @total * @discount/100.0).to_i  #we need to convert this number to an integer otherwise we get an error message, "nil can't be coerced into Integer"
       "After the discount, the total comes to $#{@total}."
     else
-      "There is no dicount to apply."
+      "There is no discount to apply."
     end
   end
 
