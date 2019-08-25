@@ -8,15 +8,16 @@ class CashRegister
   end
   
   def add_item(title, price, quantity=1)
-    if discount
       @total += price * quantity  #@total += price is the same as saying @total = total + price
-    else
-      "There is no discount to apply."
-  end
+   end
 
   def apply_discount
-    @total = (@total - @total * @discount/100.0).to_i  #we need to convert this number to an integer otherwise we get an error message, "nil can't be coerced into Integer"
-    "After the discount, the total comes to $#{@total}."
+    if discount
+      @total = (@total - @total * @discount/100.0).to_i  #we need to convert this number to an integer otherwise we get an error message, "nil can't be coerced into Integer"
+      "After the discount, the total comes to $#{@total}."
+    else
+      "There is no dicount to apply."
+    end
   end
 
 end
