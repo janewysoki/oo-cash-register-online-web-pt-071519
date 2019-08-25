@@ -6,7 +6,7 @@ class CashRegister
     @total = 0 
     @discount = discount
     @items = [] #when we make a new CashRegister, we initialize it with a new empty items array
-    @running_totals = 0
+    @running_totals = [0]
   end
   
   def add_item(title, price, quantity=1)
@@ -31,7 +31,7 @@ class CashRegister
   end
   
   def void_last_transaction
-    @total -= @running_totals[-1]
+    @total -= @running_totals.pop
   end
   
 end
