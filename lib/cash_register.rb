@@ -11,5 +11,9 @@ class CashRegister
     @total += price * quantity  #@total += price is the same as saying @total = total + price
   end
 
+  def apply_discount
+    @total *= @discount
+  end
+
 end
 
