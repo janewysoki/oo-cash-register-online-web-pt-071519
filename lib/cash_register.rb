@@ -9,7 +9,7 @@ class CashRegister
   end
   
   def add_item(title, price, quantity=1)
-    
+    @items << title
     @total += price * quantity  #@total += price is the same as saying @total = total + price
    end
 
@@ -23,7 +23,7 @@ class CashRegister
   end
 
   def items
-    
+    @items
   end
   
 end
