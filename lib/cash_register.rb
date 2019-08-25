@@ -8,7 +8,10 @@ class CashRegister
   end
   
   def add_item(title, price, quantity=1)
-    @total += price * quantity  #@total += price is the same as saying @total = total + price
+    if discount
+      @total += price * quantity  #@total += price is the same as saying @total = total + price
+    else
+      ""
   end
 
   def apply_discount
