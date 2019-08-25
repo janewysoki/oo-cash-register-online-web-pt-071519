@@ -6,6 +6,7 @@ class CashRegister
     @total = 0 
     @discount = discount
     @items = [] #when we make a new CashRegister, we initialize it with a new empty items array
+    @running_totals = 
   end
   
   def add_item(title, price, quantity=1)
@@ -13,6 +14,7 @@ class CashRegister
       @items << title
     end
     @total += price * quantity  #@total += price is the same as saying @total = total + price
+    
    end
 
   def apply_discount
@@ -29,6 +31,7 @@ class CashRegister
   end
   
   def void_last_transaction
+    @total -= @running_totals[-1]
   end
   
 end
