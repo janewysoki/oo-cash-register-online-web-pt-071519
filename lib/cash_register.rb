@@ -11,7 +11,7 @@ class CashRegister
     if discount
       @total += price * quantity  #@total += price is the same as saying @total = total + price
     else
-      ""
+      "There is no discount to apply."
   end
 
   def apply_discount
